@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
-  has_many :rooms, dependent: :destroy
+  belongs_to :room
   validates :name, presence: true
   validates :last_name, presence: true
 end

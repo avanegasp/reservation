@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 2019_01_12_160701) do
     t.string "name"
     t.string "last_name"
     t.boolean "loyalty_member"
+    t.integer "room_id"
+    t.index ["room_id"], name: "index_reservations_on_room_id"
   end
 
   create_table "rooms", force: :cascade do |t|
     t.integer "rate"
     t.integer "minibar"
-    t.integer "guest_id"
-    t.index ["guest_id"], name: "index_rooms_on_guest_id"
   end
 
 end
